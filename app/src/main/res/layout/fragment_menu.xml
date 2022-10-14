@@ -66,28 +66,22 @@
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <LinearLayout
-                android:id="@+id/category_list_container"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/category_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:orientation="horizontal"
+                android:paddingTop="24dp"
+                android:paddingBottom="16dp"
                 android:background="@drawable/category_bg"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/category_list"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:clipToPadding="false"
-                    android:nestedScrollingEnabled="false"
-                    android:orientation="horizontal"
-                    android:paddingTop="24dp"
-                    android:paddingBottom="16dp"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:itemCount="4"
-                    tools:listitem="@layout/category_item" />
-            </LinearLayout>
+                app:layout_constraintTop_toTopOf="parent"
+                tools:itemCount="4"
+                tools:listitem="@layout/category_item" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/products_list"
@@ -100,7 +94,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/category_list_container"
+                app:layout_constraintTop_toBottomOf="@+id/category_list"
                 app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
                 tools:itemCount="10"
                 tools:listitem="@layout/products_item"/>

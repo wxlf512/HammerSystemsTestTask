@@ -14,8 +14,6 @@ class MainActivity : AppCompatActivity() {
         loadFragment(MenuFragment())
         val nav = findViewById<BottomNavigationView>(R.id.bottom_menu)
         nav.setOnItemSelectedListener {
-//            Toast.makeText(applicationContext, it.itemId.toString(), Toast.LENGTH_SHORT).show()
-//            return@setOnItemSelectedListener true
             when(it.itemId) {
                 R.id.menu_menu_item -> loadFragment(MenuFragment())
                 R.id.profile_menu_item -> loadFragment(ProfileFragment())
@@ -25,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun loadFragment(fragment: Fragment) {
+    private fun loadFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
             .commit()

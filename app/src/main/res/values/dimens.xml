@@ -2,4 +2,8 @@
 <resources>
     <dimen name="tall_toolbar_height">56dp</dimen>
     <dimen name="appbar_height">128dp</dimen>
+    <dimen name="product_height">167dp</dimen>
+    <dimen name="image_dimen">135dp</dimen>
+    <dimen name="cost_btn_stroke_width">1dp</dimen>
+    <dimen name="cost_btn_corner_radius">6dp</dimen>
 </resources>

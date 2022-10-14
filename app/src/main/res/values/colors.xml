@@ -13,4 +13,6 @@
     <color name="primaryText">#FD3A69</color>
     <color name="background_color">#FBFBFB</color>
     <color name="category_unchecked">#C3C4C9</color>
+    <color name="text_color">#222831</color>
+    <color name="product_description_text_color">#AAAAAD</color>
 </resources>

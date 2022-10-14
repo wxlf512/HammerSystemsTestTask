@@ -8,4 +8,7 @@
     <string name="pizza">Пицца</string>
     <string name="basket_description">Тут должна быть корзина</string>
     <string name="profile_description">Тут должен быть профиль</string>
+    <string name="default_cost_text">от 999 р</string>
+    <string name="default_product_description_text">Состав товара</string>
+    <string name="default_product_name_text">Название товара</string>
 </resources>
