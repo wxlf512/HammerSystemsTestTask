@@ -1,10 +1,11 @@
-package dev.wxlf.hammersystemstesttask
+package dev.wxlf.hammersystemstesttask.adapters
 
 import android.graphics.Rect
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import dev.wxlf.hammersystemstesttask.R
 
 
 class BannerListAdapter(private val list: List<Int>) :

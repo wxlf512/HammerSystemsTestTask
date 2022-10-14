@@ -1,4 +1,4 @@
-package dev.wxlf.hammersystemstesttask
+package dev.wxlf.hammersystemstesttask.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import dev.wxlf.hammersystemstesttask.R
 
 
 class CategoryListAdapter(private val context: Context, private val list: List<String>) :

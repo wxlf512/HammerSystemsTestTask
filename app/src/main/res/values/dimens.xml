@@ -6,4 +6,6 @@
     <dimen name="image_dimen">135dp</dimen>
     <dimen name="cost_btn_stroke_width">1dp</dimen>
     <dimen name="cost_btn_corner_radius">6dp</dimen>
+    <dimen name="product_buy_button_width">87dp</dimen>
+    <dimen name="product_buy_button_height">32dp</dimen>
 </resources>

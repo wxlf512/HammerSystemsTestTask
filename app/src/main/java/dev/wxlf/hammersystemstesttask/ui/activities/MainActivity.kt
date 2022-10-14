@@ -1,11 +1,17 @@
-package dev.wxlf.hammersystemstesttask
+package dev.wxlf.hammersystemstesttask.ui.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
+import dev.wxlf.hammersystemstesttask.R
+import dev.wxlf.hammersystemstesttask.ui.fragments.BasketFragment
+import dev.wxlf.hammersystemstesttask.ui.fragments.MenuFragment
+import dev.wxlf.hammersystemstesttask.ui.fragments.ProfileFragment
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
