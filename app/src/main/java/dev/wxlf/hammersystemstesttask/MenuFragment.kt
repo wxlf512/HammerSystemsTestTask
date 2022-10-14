@@ -8,10 +8,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.AppBarLayout
+import kotlin.math.abs
 
 class MenuFragment : Fragment() {
 
-    @SuppressLint("UseCompatLoadingForDrawables")
+    @SuppressLint("UseCompatLoadingForDrawables", "NotifyDataSetChanged")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -20,18 +21,25 @@ class MenuFragment : Fragment() {
 
         val bannerList = view.findViewById<RecyclerView>(R.id.banner_list)
         bannerList.addItemDecoration(BannerDivider((16 * view.context.resources.displayMetrics.density).toInt()))
-        bannerList.adapter = BannerListAdapter(List<Int>(2) { 0 })
+        bannerList.adapter = BannerListAdapter(List(2) { 0 })
 
         val categoryList = view.findViewById<RecyclerView>(R.id.category_list)
         categoryList.addItemDecoration(CategoryDivider((16 * view.context.resources.displayMetrics.density).toInt()))
-        categoryList.adapter = CategoryListAdapter(listOf("Пицца", "Комбо", "Десерты", "Напитки"))
+        var choosedCategoryPosition = 0
+        val categoryListAdapter = CategoryListAdapter(view.context, listOf("Пицца", "Комбо", "Десерты", "Напитки"))
+        categoryListAdapter.onCategoryClick = { position ->
+            choosedCategoryPosition = position
+            categoryListAdapter.setChoosed(position)
+            categoryListAdapter.notifyDataSetChanged()
+        }
+        categoryList.adapter = categoryListAdapter
 
         val productsList = view.findViewById<RecyclerView>(R.id.products_list)
-        productsList.adapter = ProductListAdapter(List<Int>(10) { 0 })
+        productsList.adapter = ProductListAdapter(List(10) { 0 })
 
         val appBar = view.findViewById<AppBarLayout>(R.id.app_bar)
         appBar.addOnOffsetChangedListener { appBarLayout, verticalOffset ->
-            if (Math.abs(verticalOffset) == appBarLayout.totalScrollRange) {
+            if (abs(verticalOffset) == appBarLayout.totalScrollRange) {
                 categoryList.elevation = 10 * view.context.resources.displayMetrics.density
                 categoryList.setPadding(0, (16 * view.context.resources.displayMetrics.density).toInt(), 0, categoryList.paddingBottom)
             } else {
